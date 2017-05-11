@@ -17,7 +17,7 @@ namespace csgo_app.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(bundle);
+            base.OnCreate(bundle); //Nový komentář
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
