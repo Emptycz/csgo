@@ -28,7 +28,7 @@ namespace csgo_mosna
 
         protected override void OnResume()
         {
-            // Handle when your app resumes //kocvara je buzik
+            // Handle when your app resumes //kocvara je animator
         }
     }
 }
