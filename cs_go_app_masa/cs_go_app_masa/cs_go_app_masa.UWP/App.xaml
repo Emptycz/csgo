@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="cs_go_app_masa.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:cs_go_app_masa.UWP"
+    RequestedTheme="Light">
+
+</Application>
