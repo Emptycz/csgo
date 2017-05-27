@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:csgo_xaml"
+             x:Class="csgo_xaml.MainPage">
+
+    <StackLayout BackgroundColor="#263445">
+
+        <Label TextColor="White" Margin="50, 50, 0, 0" FontSize="17">CS:GO</Label>
+        <Label TextColor="White" Margin="50, 7, 0, 0" FontSize="17">Trainings</Label>
+        <Label TextColor="White" Margin="50, 90, 0, 0" FontSize="17">Menu</Label>
+        <Button x:Name="cre
+                ate" Text="Create Training"  HorizontalOptions="StartAndExpand" Margin="50, 10, 0, 0" FontSize="15" />
+        <Button Text="Participate"  HorizontalOptions="StartAndExpand" Margin="50, 10, 0, 0" FontSize="15" />
+        <Button Text="Notifications"  HorizontalOptions="StartAndExpand" Margin="50, 10, 0, 0" FontSize="15" />
+        <Button Text="Settings"  HorizontalOptions="StartAndExpand" Margin="50, 50, 0, 0" FontSize="15" />
+
+    </StackLayout>
+
+</ContentPage>
