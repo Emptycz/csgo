@@ -9,9 +9,27 @@
         <Label  Margin="50, 50, 0, 0" FontSize="15" >Select a Map for training - Active group </Label>
         <Button Text="Mirage"  HorizontalOptions="StartAndExpand" Margin="40, 50, 0, 0" FontSize="15" />
         <Button Text="Train"  HorizontalOptions="StartAndExpand" Margin="140, -55, 0, 0" FontSize="15" />
-        <Button Text="Train"  HorizontalOptions="StartAndExpand" Margin="240, -55, 0, 0" FontSize="15" />
+        <Button Text="Nuke"  HorizontalOptions="StartAndExpand" Margin="240, -55, 0, 0" FontSize="15" />
+        <Button Text="Cache"  HorizontalOptions="StartAndExpand" Margin="40, 50, 0, 0" FontSize="15" />
+        <Button Text="Cobble"  HorizontalOptions="StartAndExpand" Margin="140, -55, 0, 0" FontSize="15" />
+        <Button Text="Overpass"  HorizontalOptions="StartAndExpand" Margin="240, -55, 0, 0" FontSize="15" />
+        <Button Text="Continue"  HorizontalOptions="StartAndExpand" Margin="135, 75, 0, 0" FontSize="15" />
         
         
     </StackLayout>
+  
+    <!-- <StackLayout BackgroundColor="#263445">
+
+        <Label TextColor="White" Margin="50, 50, 0, 0" FontSize="17">CS:GO</Label>
+        <Label TextColor="White" Margin="50, 7, 0, 0" FontSize="17">Trainings</Label>
+        <Label TextColor="White" Margin="50, 90, 0, 0" FontSize="17">Menu</Label>
+        <Button Text="Create Training"  HorizontalOptions="StartAndExpand" Margin="50, 10, 0, 0" FontSize="15" />
+        <Button Text="Participate"  HorizontalOptions="StartAndExpand" Margin="50, 10, 0, 0" FontSize="15" />
+        <Button Text="Notifications"  HorizontalOptions="StartAndExpand" Margin="50, 10, 0, 0" FontSize="15" />
+        <Button Text="Settings"  HorizontalOptions="StartAndExpand" Margin="50, 50, 0, 0" FontSize="15" />
+
+    </StackLayout> -->
+  
+  
 
 </ContentPage>
