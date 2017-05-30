@@ -12,13 +12,15 @@ namespace csgo_app
             [PrimaryKey, AutoIncrement]
             public int ID { get; set; }
             public string Name { get; set; }
-            public string Text { get; set; }
+            public string Map { get; set; }
+            public int Cas { get; set; }
+            public bool Ucast { get; set; }
             public TodoItem()
             {
             }
             public override string ToString()
             {
-                return "ID" + ID + " Name " + Name + " Text " + Text;
+                return "Name: " + Name + " Map: " + Map + " Èas: " + Cas;
             }
         }
     }

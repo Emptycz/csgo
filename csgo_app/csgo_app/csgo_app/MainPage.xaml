@@ -8,4 +8,5 @@
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
 
+    <Entry Keyboard="text" Placeholder="Jméno / název tréninku" Text="" TextChanged="Entry_TextChanged"></Entry>
 </ContentPage>

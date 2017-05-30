@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "518889668752",
+    "project_id": "csgo-16d7d"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518889668752:android:41ce414105042eee",
+        "android_client_info": {
+          "package_name": "com.csgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518889668752-r0dgi3htknlkg3gd4o5air0bg2tan5tp.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "518889668752-nhsqkhh0r3l54dh6qdase4a2hgb8e7i7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.csgo",
+            "certificate_hash": "ced3d8f3b9415dd988abd12983254a1f9a427c5d"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzXZ2QdOjbWLBR8MbXlYzRRzLFlvqS7UY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
