@@ -28,7 +28,29 @@
         <Button Text="Notifications"  HorizontalOptions="StartAndExpand" Margin="50, 10, 0, 0" FontSize="15" />
         <Button Text="Settings"  HorizontalOptions="StartAndExpand" Margin="50, 50, 0, 0" FontSize="15" />
 
-    </StackLayout> -->
+    </StackLayout> 
+
+    <StackLayout>
+
+
+        <Label  Margin="50, 50, 0, 0" FontSize="15" >Please fill all the fields below</Label>
+        <Entry Placeholder="Name of the training"  HorizontalOptions="StartAndExpand" Margin="40, 20, 0, 0" FontSize="15" />
+        <Entry Placeholder="Start time of the training"  HorizontalOptions="StartAndExpand" Margin="40, 0, 0, 0" FontSize="15" />
+        <Entry Placeholder="Date of the training"  HorizontalOptions="StartAndExpand" Margin="40, 0, 0, 0" FontSize="15" />
+        <Label  Margin="50, 30, 0, 0" FontSize="15" >Description of the training</Label>
+        <Entry  TextColor="Gray" Placeholder="Description of the training"  HorizontalOptions="StartAndExpand" Margin="40, 40, 0, 0" FontSize="15" />
+        <Button Text="Continue"  HorizontalOptions="StartAndExpand" Margin="135, 75, 0, 0" FontSize="15" />
+
+
+ 
+
+    </StackLayout>
+
+    
+
+
+
+-->
   
   
 
