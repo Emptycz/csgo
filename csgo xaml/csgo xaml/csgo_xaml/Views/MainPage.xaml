@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:csgo_xaml"
+             x:Class="csgo_xaml.MainPage">
+
+    <StackLayout BackgroundColor="White">
+
+        <Label  Margin="50, 50, 0, 0" FontSize="15" >Select a Map for training - Active group </Label>
+        <Button Text="Mirage"  HorizontalOptions="StartAndExpand" Margin="40, 50, 0, 0" FontSize="15" />
+        <Button Text="Train"  HorizontalOptions="StartAndExpand" Margin="140, -55, 0, 0" FontSize="15" />
+        <Button Text="Train"  HorizontalOptions="StartAndExpand" Margin="240, -55, 0, 0" FontSize="15" />
+        
+        
+    </StackLayout>
+
+</ContentPage>
