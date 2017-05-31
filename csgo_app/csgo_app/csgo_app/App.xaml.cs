@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SQLite;
 
 using Xamarin.Forms;
+using csgo_app.Database;
 
 namespace csgo_app
 {
@@ -29,6 +31,20 @@ namespace csgo_app
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        private static ItemDatabase _database;
+
+        public static ItemDatabase Database
+        {
+            get
+            {
+                if (_database == null)
+                {
+                    _database = new ItemDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("SQLite.db3"));
+                }
+                return _database;
+            }
         }
     }
 }

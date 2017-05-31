@@ -19,12 +19,5 @@ namespace csgo_app
             InitializeComponent();
         }
 
-        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Name = Entry.TextProperty.ToString();
-        }
-
-
-
     }
 }

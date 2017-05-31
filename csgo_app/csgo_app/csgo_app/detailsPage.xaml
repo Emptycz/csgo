@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="csgo_app.detailsPage">
+    <AbsoluteLayout>
+        <Label      
+      x:Name ="nameL"
+      FontSize="20"
+      HorizontalTextAlignment="Center"
+      AbsoluteLayout.LayoutBounds="0,140,1,40"
+      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+        </Label>
+        <Label 
+      x:Name="mapL"
+      FontSize="15"
+      HorizontalTextAlignment="Center"
+      AbsoluteLayout.LayoutBounds="0,180,1,40"
+      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+        </Label>
+        <Label      
+      x:Name ="casL"
+      FontSize="15"
+      HorizontalTextAlignment="Center"
+      AbsoluteLayout.LayoutBounds="0,220,1,40"
+      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+        </Label>
+        <Label      
+      x:Name ="ucastL"
+      FontSize="15"
+      HorizontalTextAlignment="Center"
+      AbsoluteLayout.LayoutBounds="0,260,1,40"
+      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+        </Label>
+    </AbsoluteLayout>
+</ContentView>

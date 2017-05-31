@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:csgo_app"
              x:Class="csgo_app.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <Grid>
+        <ListView x:Name="mainList" Grid.Row="1" ItemTapped="selectedItemMethod" >
 
-    <Entry Keyboard="text" Placeholder="Jméno / název tréninku" Text="" TextChanged="Entry_TextChanged"></Entry>
+        </ListView>
+    </Grid>
 </ContentPage>
