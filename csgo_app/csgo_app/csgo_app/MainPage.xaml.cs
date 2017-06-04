@@ -48,6 +48,10 @@ namespace csgo_app
 
         public MainPage()
         {
+            InitializeComponent();
+            Redirect.Clicked += (s, e) => {
+                Navigation.PushAsync(new createEvent(), false);
+            };
             var dbConnection = App.Database;
 
             ItemDatabase ItemDatabase = App.Database;
@@ -58,83 +62,16 @@ namespace csgo_app
           //  item.Ucast = ucast;
             App.Database.SaveItemAsync(item);
 
-            ListView listView = new ListView
-            {
-                // Source of data items.
-                ItemsSource = App.Database.GetItemsAsync().Result,
-
-                // Define template for displaying each item.
-                // (Argument of DataTemplate constructor is called for 
-                //      each item; it must return a Cell derivative.)
-                ItemTemplate = new DataTemplate(() =>
-                {
-
-                    if (ucast == true)
-                    {
-                        ucast_confirm = "Zůčastním se";
-                    }
-                    else
-                    {
-                        ucast_confirm = "Nezůčastním se";
-                    }
-
-                    // Create views with bindings for displaying each property.
-                    Label nameLabel = new Label();
-                    nameLabel.FontSize = 16;
-                    nameLabel.SetBinding(Label.TextProperty, "Name");
-
-                    Label mapLabel = new Label();
-                    mapLabel.FontSize = 12;
-                    mapLabel.SetBinding(Label.TextProperty, "Map");
-
-                    Label timeLabel = new Label();
-                    timeLabel.FontSize = 12;
-                    timeLabel.SetBinding(Label.TextProperty, "Time");
-
-                    Label ucastLabel = new Label();
-                    ucastLabel.FontSize = 12;
-                    ucastLabel.SetBinding(Label.TextProperty, ucast_confirm);
 
 
-                    BoxView myBoxView = new BoxView();
-
-                    // Return an assembled ViewCell.
-                    return new ViewCell
-                    {
-                        View = new StackLayout
-                        {
-                            Padding = new Thickness(0, 5),
-                            Orientation = StackOrientation.Horizontal,
-                            Children =
-                                {
-
-                                    myBoxView,
-                                    new StackLayout
-                                    {
-                                        VerticalOptions = LayoutOptions.Center,
-                                        Spacing = 0,
-                                        Children =
-                                        {
-                                            nameLabel,
-                                            mapLabel,
-                                            timeLabel,
-                                            ucastLabel,
-                                        }
-                                    }
-                                }
-                        }
-                    };
-                })
-            };
-
-
-
-            listView.ItemTapped += (s, e) =>
+            mainList.ItemsSource = App.Database.GetItemsAsync().Result;
+            mainList.ItemTapped += (s, e) =>
             {
                 Navigation.PushAsync(new detailsPage(e.Item as Event));
             };
         }
 
+       
 
-    }
+}
 }

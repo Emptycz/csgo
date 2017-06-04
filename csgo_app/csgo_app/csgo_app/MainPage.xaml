@@ -2,30 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="csgo_app.MainPage">
-    <Grid>
-        <ListView x:Name="mainList" Grid.Row="1" ItemTapped="selectedItemMethod" >
-            <!--
-       <ListView.ItemTemplate>
-       <DataTemplate>
-         <ViewCell>
-           <Grid HeightRequest="100">
-             <Grid.RowDefinitions>
-               <RowDefinition Height="*" ></RowDefinition>
-               <RowDefinition Height="*"></RowDefinition>
-             </Grid.RowDefinitions>
-             <Grid.ColumnDefinitions>
-               <ColumnDefinition Width="*"></ColumnDefinition>
-               <ColumnDefinition Width="5*"></ColumnDefinition>
-             </Grid.ColumnDefinitions>
-             <Label Text="{Binding name}" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="End" ></Label>
-             <Label Text="{Binding phoneNumber}" Grid.Row="1"  Grid.Column="1" FontSize="11" VerticalTextAlignment="Start"  />
-             <Image Source="{Biding profilePicture}" VerticalAligment="Left" HorizontalOptions="Center" Height="100" Width="100"  />
-           </Grid>
-         </ViewCell>
-
-       </DataTemplate>
-       </ListView.ItemTemplate>
-       -->
-        </ListView>
-    </Grid>
+    <StackLayout BackgroundColor="#00E676" x:Name="scoresPg">
+        <Button x:Name="Redirect" Text="Vytvořit"/>
+        <Label Text="Menu" x:Name="toMenu" HorizontalOptions="End" TextColor="#C54C68" FontSize="Large" FontAttributes="Bold" Margin="10"/>
+        <StackLayout Orientation="Vertical" Margin="50,5,50,5">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name" FontAttributes="Bold" TextColor="White" FontSize="20" />
+                <Label Text="Map" FontAttributes="Bold" TextColor="White" FontSize="20" HorizontalOptions="EndAndExpand"/>
+                <Label Text="Time" FontAttributes="Bold" TextColor="White" FontSize="20" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <ListView x:Name="mainList" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Margin="50,5,50,5">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" TextColor="#C54C68" FontAttributes="Bold" />
+                                    <Label Text="{Binding Map}" TextColor="#C54C68" FontAttributes="Bold"
+                                HorizontalOptions="EndAndExpand" MinimumWidthRequest="40"/>
+                                    <Label Text="{Binding Time}" TextColor="#C54C68" FontAttributes="Bold"
+                                HorizontalOptions="EndAndExpand" MinimumWidthRequest="40"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

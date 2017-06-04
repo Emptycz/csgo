@@ -43,7 +43,6 @@ namespace csgo_app
 
         private void Continue_Clicked(object sender, EventArgs e)
         {
-
             Navigation.PushAsync(new chooseMap(event2 as Event));
         }
     }
