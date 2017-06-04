@@ -48,7 +48,7 @@ namespace csgo_app
                 Navigation.PushAsync(new csgo_app.createEvent(), true);
             };
 
-            var itemsFromDb = App.Database.GetItemsAsync().Result;
+            var itemsFromDb = App.Database.GetItemsBy().Result;
             mainList.ItemsSource = itemsFromDb;
 
             mainList.ItemsSource = App.Database.GetItemsAsync().Result;

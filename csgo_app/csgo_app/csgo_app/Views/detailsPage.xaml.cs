@@ -49,5 +49,10 @@ namespace csgo_app.Views
             App.Database.DeleteItemAsync(ToDelete);
             Navigation.PushAsync(new csgo_app.MainPage(), false);
         }
+
+        private void RedirectHome_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new csgo_app.MainPage(), false);
+        }
     }
 }

@@ -31,8 +31,13 @@ namespace csgo_app.Views
             item.Map = event2.map;
             item.Name = event2.name;
             item.Ucast = event2.ucast;
+            item.Description = event2.description;
             App.Database.SaveItemAsync(item);
+            
+        }
 
+        private void RedirectHome_Clicked(object sender, EventArgs e)
+        {
             Navigation.PushAsync(new csgo_app.MainPage(), false);
         }
     }

@@ -10,8 +10,8 @@
         <Button x:Name="Train" Text="Train"  HorizontalOptions="StartAndExpand" Margin="140, -55, 0, 0" FontSize="15" Clicked="Train_Clicked" />
         <Button x:Name="Nuke" Text="Nuke"  HorizontalOptions="StartAndExpand" Margin="240, -55, 0, 0" FontSize="15" Clicked="Nuke_Clicked" />
         <Button x:Name="Cache" Text="Cache"  HorizontalOptions="StartAndExpand" Margin="40, 50, 0, 0" FontSize="15" Clicked="Cache_Clicked" />
-        <Button x:Name="Cobble" Text="Cobblestone"  HorizontalOptions="StartAndExpand" Margin="140, -105, 0, 0" FontSize="15" Clicked="Cobble_Clicked" />
-        <Button x:Name="Overpass" Text="Overpass"  HorizontalOptions="StartAndExpand" Margin="240, -55, 0, 0" FontSize="15" Clicked="Overpass_Clicked"/>
+        <Button x:Name="Cobble" Text="Cobblestone"  HorizontalOptions="StartAndExpand" Margin="140, 110, 0, 0" FontSize="15" Clicked="Cobble_Clicked" />
+        <Button x:Name="Overpass" Text="Overpass"  HorizontalOptions="StartAndExpand" Margin="240, -200, 0, 0" FontSize="15" Clicked="Overpass_Clicked"/>
 
     </StackLayout>
 </ContentPage>

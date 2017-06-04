@@ -37,6 +37,11 @@ namespace csgo_app.Database
             return database.Table<Item>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
 
+        public Task<List<Item>> GetItemsBy()
+        {
+            return database.QueryAsync<Item>("SELECT * FROM [Item] ORDER BY `ID` DESC LIMIT 10");
+        }
+
         public Task<int> SaveItemAsync(Item item)
         {
             item.TimeStamp = DateTime.Now;
