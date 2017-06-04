@@ -52,5 +52,11 @@ namespace csgo_app.Views
             event3.map = Overpass.Text;
             Navigation.PushAsync(new addItem(event3 as Event));
         }
+
+        private void Mirage_Clicked(object sender, EventArgs e)
+        {
+            event3.map = Mirage.Text;
+            Navigation.PushAsync(new addItem(event3 as Event));
+        }
     }
 }
