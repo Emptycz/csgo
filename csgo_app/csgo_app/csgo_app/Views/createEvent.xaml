@@ -11,8 +11,24 @@
         <Entry x:Name="Day" Placeholder="Date of the training"  HorizontalOptions="StartAndExpand" Margin="40, 0, 0, 0" FontSize="15" TextChanged="Day_TextChanged" /> -->
         <Label  Margin="50, 30, 0, 0" FontSize="15" Text="Description of the training" />
         <Entry x:Name="Description" Placeholder="Description of the training"  HorizontalOptions="StartAndExpand" Margin="40, 40, 0, 0" FontSize="15" TextChanged="Description_TextChanged" />
+        <!--<DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}">
+            <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+            <DatePicker.MinimumDate>
+                <sys:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Jan 1 2000</x:String>
+                    </x:Arguments>
+                </sys:DateTime>
+            </DatePicker.MinimumDate>
+            <DatePicker.MaximumDate>
+                <sys:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Dec 31 2050</x:String>
+                    </x:Arguments>
+                </sys:DateTime>
+            </DatePicker.MaximumDate>
+        </DatePicker> -->
         <Button x:Name="Continue" Text="Continue"  HorizontalOptions="StartAndExpand" Margin="135, 75, 0, 0" FontSize="15" Clicked="Continue_Clicked"/>
- 
         
     </StackLayout>
 </ContentPage>

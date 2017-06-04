@@ -18,11 +18,21 @@ namespace csgo_app
         private Event event2 = new Event("", "",/* DateTime.Today,*/ true, "");
         private string DescriptionText;
         private string NameText;
+        private DateTime myDate;
+
         public createEvent()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-        }
+            DatePicker datePicker = new DatePicker
+            {
+                Format = "D",
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+    }
+
+        private event EventHandler<DateChangedEventArgs> DateSelected;
+
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
         //    NameText = Name.Text;
@@ -34,12 +44,14 @@ namespace csgo_app
         //    DescriptionText = Description.Text;
             event2.description = Description.Text;
         }
+       
 
         private void Continue_Clicked(object sender, EventArgs e)
         {
-          //  event2.name = NameText;
-          //  event2.description = DescriptionText;
             Navigation.PushAsync(new csgo_app.Views.chooseMap(event2), false);
         }
+
+        
+ 
     }
 }

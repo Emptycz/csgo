@@ -31,7 +31,7 @@
       AbsoluteLayout.LayoutBounds="0,260,1,40"
       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
         </Label>
-        <Button x:Name="DeleteObject" Text="Delete this training" Clicked="DeleteObject_Clicked"/>
-        <Button x:Name="RedirectHome" Text="Take me Home" Clicked="RedirectHome_Clicked"/>
+        <Button Margin="150,0,0,0" VerticalOptions="Center" x:Name="DeleteObject" Text="Delete this training" Clicked="DeleteObject_Clicked"/>
+        <Button Margin="0,0,0,0" x:Name="RedirectHome" Text="Take me Home" Clicked="RedirectHome_Clicked"/>
     </AbsoluteLayout>
 </ContentPage>
