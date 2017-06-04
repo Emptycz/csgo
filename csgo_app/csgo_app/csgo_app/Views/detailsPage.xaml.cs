@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using csgo_app.Database;
+using csgo_app.Views;
+using csgo_app;
+using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,11 +21,13 @@ namespace csgo_app.Views
             InitializeComponent();
         }
 
-        public detailsPage(Event item)
+        Item ToDelete = new Item();
+
+        public detailsPage(Item item)
         {
             InitializeComponent();
             
-           /* if (event2.ucast == true)
+            if (item.Ucast == true)
             {
                 ucast = "Zůčastním se";
             }
@@ -30,13 +35,19 @@ namespace csgo_app.Views
             {
                 ucast = "Nezůčastním se";
             }
-            */
-            nameL.Text = item.name;
-            mapL.Text = item.map;
-            ucastL.Text = ucast;
             
+            nameL.Text = item.Name;
+            mapL.Text = item.Map;
+            ucastL.Text = ucast;
+            descriptionL.Text = item.Description;
 
+            ToDelete = item;
+        }
 
+        private void DeleteObject_Clicked(object sender, EventArgs e)
+        {
+            App.Database.DeleteItemAsync(ToDelete);
+            Navigation.PushAsync(new csgo_app.MainPage(), false);
         }
     }
 }

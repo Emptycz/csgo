@@ -27,17 +27,11 @@ namespace csgo_app
                 return _database;
             }
         }
-      /*  private List<Event> getEvent()
-        {
-            List<Event> events = new List<Event>();
-            events.Add(new Event("Ranní procvička", "Mirage", "17:20", true));
-            return events;
-        }*/
 
         private void selectedItemMethod(object sender, ItemTappedEventArgs e)
         {
             // Grab ListView Item as Person object and send it as parameter to constructor of InfoPage
-            Navigation.PushAsync(new csgo_app.Views.detailsPage(e.Item as Event));
+            Navigation.PushAsync(new csgo_app.Views.detailsPage(e.Item as Item));
         }
         
         //předdefinování proměnných
@@ -51,7 +45,7 @@ namespace csgo_app
         {
             InitializeComponent();
             redirection.Clicked += (s, e) => {
-                Navigation.PushAsync(new csgo_app.createEvent(), false);
+                Navigation.PushAsync(new csgo_app.createEvent(), true);
             };
 
             var itemsFromDb = App.Database.GetItemsAsync().Result;
@@ -60,7 +54,7 @@ namespace csgo_app
             mainList.ItemsSource = App.Database.GetItemsAsync().Result;
             mainList.ItemTapped += (s, e) =>
             {
-                Navigation.PushAsync(new csgo_app.Views.detailsPage(e.Item as Event));
+                Navigation.PushAsync(new csgo_app.Views.detailsPage(e.Item as Item), true);
             };  
         }
 
