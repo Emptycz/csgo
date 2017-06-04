@@ -5,21 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace csgo_app
+namespace csgo_app.Views
 {
-    public partial class detailsPage : ContentView
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class detailsPage : ContentPage
     {
         private string ucast;
         public detailsPage()
-        {         
+        {
             InitializeComponent();
         }
+
         public detailsPage(Event event2)
         {
             InitializeComponent();
 
-            if(event2.ucast == true)
+            if (event2.ucast == true)
             {
                 ucast = "Zůčastním se";
             }
@@ -32,8 +35,6 @@ namespace csgo_app
             mapL.Text = event2.map;
             ucastL.Text = ucast;
 
-
         }
-
     }
 }

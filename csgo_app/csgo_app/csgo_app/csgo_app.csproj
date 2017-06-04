@@ -39,10 +39,19 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core.cs" />
+    <Compile Include="Views\addItem.xaml.cs">
+      <DependentUpon>addItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\chooseMap.xaml.cs">
+      <DependentUpon>chooseMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\createEvent.xaml.cs">
+      <DependentUpon>createEvent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Database\IFileHelper.cs" />
     <Compile Include="Database\Item.cs" />
     <Compile Include="Database\ItemDatabase.cs" />
-    <Compile Include="detailsPage.xaml.cs">
+    <Compile Include="Views\detailsPage.xaml.cs">
       <DependentUpon>detailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Event.cs" />
@@ -52,10 +61,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -88,7 +93,31 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="detailsPage.xaml">
+    <EmbeddedResource Include="MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\createEvent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\chooseMap.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\addItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\detailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

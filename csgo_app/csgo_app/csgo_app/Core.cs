@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using csgo_app;
+using Xamarin.Forms.Xaml;
 using csgo_app.Database;
 using SQLite;
 
 namespace csgo_app
 {
-    public class Core 
+    class Core
     {
         private static ItemDatabase _database;
         public static ItemDatabase Database
@@ -24,11 +24,17 @@ namespace csgo_app
                 return _database;
             }
         }
+        private List<Event> getEvent()
+        {
+            List<Event> events = new List<Event>();
+            events.Add(new Event("Ranní procvička", "Mirage", DateTime.Today, true, "Description"));
+            return events;
+        }
 
         private void selectedItemMethod(object sender, ItemTappedEventArgs e)
         {
             // Grab ListView Item as Person object and send it as parameter to constructor of InfoPage
-            Navigation.PushAsync(new detailsPage(e.Item as Event));
+            //Navigation.PushAsync(new detailsPage(e.Item as Event));
         }
 
         //předdefinování proměnných
@@ -47,7 +53,7 @@ namespace csgo_app
             //item.Cas = cas;
             item.Map = map;
             item.Name = name;
-            item.Ucast = ucast;
+            //item.Ucast = ucast;
             App.Database.SaveItemAsync(item);
 
             ListView listView = new ListView
@@ -123,7 +129,7 @@ namespace csgo_app
 
             listView.ItemTapped += (s, e) =>
             {
-                Navigation.PushAsync(new detailsPage(e.Item as Event));
+                //Navigation.PushAsync(new detailsPage(e.Item as Event));
             };
         }
 

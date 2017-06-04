@@ -1,12 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:csgo_app"
              x:Class="csgo_app.MainPage">
-
     <Grid>
         <ListView x:Name="mainList" Grid.Row="1" ItemTapped="selectedItemMethod" >
+            <!--
+       <ListView.ItemTemplate>
+       <DataTemplate>
+         <ViewCell>
+           <Grid HeightRequest="100">
+             <Grid.RowDefinitions>
+               <RowDefinition Height="*" ></RowDefinition>
+               <RowDefinition Height="*"></RowDefinition>
+             </Grid.RowDefinitions>
+             <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*"></ColumnDefinition>
+               <ColumnDefinition Width="5*"></ColumnDefinition>
+             </Grid.ColumnDefinitions>
+             <Label Text="{Binding name}" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="End" ></Label>
+             <Label Text="{Binding phoneNumber}" Grid.Row="1"  Grid.Column="1" FontSize="11" VerticalTextAlignment="Start"  />
+             <Image Source="{Biding profilePicture}" VerticalAligment="Left" HorizontalOptions="Center" Height="100" Width="100"  />
+           </Grid>
+         </ViewCell>
 
+       </DataTemplate>
+       </ListView.ItemTemplate>
+       -->
         </ListView>
     </Grid>
 </ContentPage>

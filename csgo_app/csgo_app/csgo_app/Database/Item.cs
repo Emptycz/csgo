@@ -11,10 +11,12 @@ namespace csgo_app.Database
     { 
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
+        public DateTime TimeStamp { get; set; }
         public string Name { get; set; }
         public string Map { get; set; }
-        public int Cas { get; set; }
+        public DateTime Cas { get; set; }
         public bool Ucast { get; set; }
+        public string Description { get; set; }
         public Item()
         {
         }

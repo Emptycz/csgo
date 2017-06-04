@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="csgo_app.createEvent">
+    <StackLayout>
+
+
+        <Label  Margin="50, 50, 0, 0" FontSize="15" Text="Please fill all the fields below" />
+        <Entry x:Name="Name" Placeholder="Name of the training"  HorizontalOptions="StartAndExpand" Margin="40, 20, 0, 0" FontSize="15" TextChanged="Name_TextChanged" />
+        <Entry x:Name="Start" Placeholder="Start time of the training"  HorizontalOptions="StartAndExpand" Margin="40, 0, 0, 0" FontSize="15" TextChanged="Start_TextChanged" />
+        <Entry x:Name="Day" Placeholder="Date of the training"  HorizontalOptions="StartAndExpand" Margin="40, 0, 0, 0" FontSize="15" TextChanged="Day_TextChanged" />
+        <Label  Margin="50, 30, 0, 0" FontSize="15" Text="Description of the training" />
+        <Entry x:Name="Description" TextColor="Gray" Placeholder="Description of the training"  HorizontalOptions="StartAndExpand" Margin="40, 40, 0, 0" FontSize="15" TextChanged="Description_TextChanged" />
+        <Button x:Name="Continue" Text="Continue"  HorizontalOptions="StartAndExpand" Margin="135, 75, 0, 0" FontSize="15" Clicked="Continue_Clicked"/>
+
+        
+    </StackLayout>
+</ContentPage>
