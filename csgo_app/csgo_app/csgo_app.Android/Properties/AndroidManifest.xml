@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="CS_GO_Training_Note.CS_GO_Training_Note" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
 	<application android:label="csgo_app.Android"></application>
 </manifest>

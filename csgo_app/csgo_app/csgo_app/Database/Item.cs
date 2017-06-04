@@ -14,7 +14,7 @@ namespace csgo_app.Database
         public DateTime TimeStamp { get; set; }
         public string Name { get; set; }
         public string Map { get; set; }
-        public DateTime Cas { get; set; }
+        //public DateTime Cas { get; set; }
         public bool Ucast { get; set; }
         public string Description { get; set; }
         public Item()
@@ -22,7 +22,7 @@ namespace csgo_app.Database
         }
         public override string ToString()
         {
-            return "Name: " + Name + " Map: " + Map + " Čas: " + Cas;
+            return "Name: " + Name + " Map: " + Map /*" Čas: " + Cas*/;
         }
     }
 

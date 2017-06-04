@@ -18,11 +18,11 @@ namespace csgo_app.Views
             InitializeComponent();
         }
 
-        public detailsPage(Event event2)
+        public detailsPage(Event item)
         {
             InitializeComponent();
-
-            if (event2.ucast == true)
+            
+           /* if (event2.ucast == true)
             {
                 ucast = "Zůčastním se";
             }
@@ -30,10 +30,12 @@ namespace csgo_app.Views
             {
                 ucast = "Nezůčastním se";
             }
-            nameL.Text = event2.name;
-            casL.Text = event2.cas.ToString();
-            mapL.Text = event2.map;
+            */
+            nameL.Text = item.name;
+            mapL.Text = item.map;
             ucastL.Text = ucast;
+            
+
 
         }
     }

@@ -14,6 +14,7 @@ namespace csgo_app
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
+        
         private static ItemDatabase _database;
         public static ItemDatabase Database
         {
@@ -36,9 +37,9 @@ namespace csgo_app
         private void selectedItemMethod(object sender, ItemTappedEventArgs e)
         {
             // Grab ListView Item as Person object and send it as parameter to constructor of InfoPage
-            Navigation.PushAsync(new createEvent());
+            Navigation.PushAsync(new csgo_app.Views.detailsPage(e.Item as Event));
         }
-
+        
         //předdefinování proměnných
         private string name;
         private string map;
@@ -49,29 +50,19 @@ namespace csgo_app
         public MainPage()
         {
             InitializeComponent();
-            Redirect.Clicked += (s, e) => {
-                Navigation.PushAsync(new createEvent(), false);
+            redirection.Clicked += (s, e) => {
+                Navigation.PushAsync(new csgo_app.createEvent(), false);
             };
-            var dbConnection = App.Database;
 
-            ItemDatabase ItemDatabase = App.Database;
-            Item item = new Item();
-            //item.Cas = cas;
-            item.Map = map;
-            item.Name = name;
-          //  item.Ucast = ucast;
-            App.Database.SaveItemAsync(item);
-
-
+            var itemsFromDb = App.Database.GetItemsAsync().Result;
+            mainList.ItemsSource = itemsFromDb;
 
             mainList.ItemsSource = App.Database.GetItemsAsync().Result;
             mainList.ItemTapped += (s, e) =>
             {
-                Navigation.PushAsync(new detailsPage(e.Item as Event));
-            };
+                Navigation.PushAsync(new csgo_app.Views.detailsPage(e.Item as Event));
+            };  
         }
 
-       
-
-}
+    }
 }

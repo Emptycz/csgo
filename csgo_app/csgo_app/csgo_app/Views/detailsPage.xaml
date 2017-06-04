@@ -18,18 +18,12 @@
       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
         </Label>
         <Label      
-      x:Name ="casL"
-      FontSize="15"
-      HorizontalTextAlignment="Center"
-      AbsoluteLayout.LayoutBounds="0,220,1,40"
-      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
-        </Label>
-        <Label      
       x:Name ="ucastL"
       FontSize="15"
       HorizontalTextAlignment="Center"
       AbsoluteLayout.LayoutBounds="0,260,1,40"
       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
         </Label>
+        <Button x:Name="DeleteObject" Text="Delete this training"/>
     </AbsoluteLayout>
 </ContentPage>

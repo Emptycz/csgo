@@ -2,9 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="csgo_app.MainPage">
-    <StackLayout BackgroundColor="#00E676" x:Name="scoresPg">
-        <Button x:Name="Redirect" Text="Vytvořit"/>
-        <Label Text="Menu" x:Name="toMenu" HorizontalOptions="End" TextColor="#C54C68" FontSize="Large" FontAttributes="Bold" Margin="10"/>
+    <StackLayout BackgroundColor="#000080" x:Name="scoresPg">
+        <Button x:Name="redirection" Text="Create new event"/>
         <StackLayout Orientation="Vertical" Margin="50,5,50,5">
             <StackLayout Orientation="Horizontal">
                 <Label Text="Name" FontAttributes="Bold" TextColor="White" FontSize="20" />
@@ -17,10 +16,10 @@
                         <ViewCell>
                             <StackLayout Orientation="Vertical" Margin="50,5,50,5">
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Name}" TextColor="#C54C68" FontAttributes="Bold" />
-                                    <Label Text="{Binding Map}" TextColor="#C54C68" FontAttributes="Bold"
+                                    <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" />
+                                    <Label Text="{Binding Map}" TextColor="White" FontAttributes="Bold"
                                 HorizontalOptions="EndAndExpand" MinimumWidthRequest="40"/>
-                                    <Label Text="{Binding Time}" TextColor="#C54C68" FontAttributes="Bold"
+                                    <Label Text="{Binding Time}" TextColor="White" FontAttributes="Bold"
                                 HorizontalOptions="EndAndExpand" MinimumWidthRequest="40"/>
                                 </StackLayout>
                             </StackLayout>

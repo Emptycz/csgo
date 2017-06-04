@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using csgo_app.UWP;
 using Xamarin.Forms;
+using System.IO;
 
 [assembly: Dependency(typeof(FileHelper))]
 namespace csgo_app.UWP
