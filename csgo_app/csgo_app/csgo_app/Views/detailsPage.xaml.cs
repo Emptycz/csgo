@@ -19,6 +19,7 @@ namespace csgo_app.Views
         public detailsPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         Item ToDelete = new Item();

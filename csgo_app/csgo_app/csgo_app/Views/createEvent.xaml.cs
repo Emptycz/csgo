@@ -21,6 +21,7 @@ namespace csgo_app
         public createEvent()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {

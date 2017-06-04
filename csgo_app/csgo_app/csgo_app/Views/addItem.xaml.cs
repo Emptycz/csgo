@@ -17,6 +17,7 @@ namespace csgo_app.Views
         public addItem(Event event3)
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             event2.name = event3.name;
             event2.description = event3.description;
             event2.map = event3.map;

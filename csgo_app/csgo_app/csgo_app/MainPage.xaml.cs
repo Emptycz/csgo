@@ -44,6 +44,7 @@ namespace csgo_app
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             redirection.Clicked += (s, e) => {
                 Navigation.PushAsync(new csgo_app.createEvent(), true);
             };

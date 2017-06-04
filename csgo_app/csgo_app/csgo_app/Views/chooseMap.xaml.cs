@@ -18,6 +18,7 @@ namespace csgo_app.Views
         public chooseMap(Event event2)
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             event3.name = event2.name;
             event3.description = event2.description;
             //event3.cas = event2.cas;
