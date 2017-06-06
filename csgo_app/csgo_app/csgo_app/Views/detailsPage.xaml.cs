@@ -20,6 +20,8 @@ namespace csgo_app.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+
+            
         }
 
         Item ToDelete = new Item();
@@ -44,11 +46,29 @@ namespace csgo_app.Views
             descriptionL.Text = item.Description;
             casL.Text = /*item.Cas.ToString();*/item.Cas.Day.ToString() + "." + item.Cas.Month.ToString() + "." + item.Cas.Year.ToString() + " " + item.Cas.Hour.ToString() + ":" + item.Cas.Minute.ToString();
             
-
             ToDelete = item;
         }
 
         private void DeleteObject_Clicked(object sender, EventArgs e)
+        {
+            OnAlertYesNoClicked(sender, e);
+        }
+
+        async void OnAlertYesNoClicked(object sender, EventArgs e)
+        {
+            var answer = await DisplayAlert("", "Do you really want to delete this event?", "Yes", "No");
+            string answered = answer.ToString();
+            if ( answered == "Yes" )
+            {
+                DeleteMe();
+            }
+            else
+            {
+                Navigation.PushAsync(new csgo_app.MainPage(), false);
+            }
+        }
+
+        private void DeleteMe()
         {
             App.Database.DeleteItemAsync(ToDelete);
             Navigation.PushAsync(new csgo_app.MainPage(), false);

@@ -16,6 +16,7 @@ namespace csgo_app
             InitializeComponent();
             // new csgo_app.MainPage()
             MainPage = new NavigationPage(new csgo_app.MainPage());
+
         }
 
         protected override void OnStart()

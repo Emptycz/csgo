@@ -7,13 +7,17 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using csgo_app.Database;
 using SQLite;
+using Application = Xamarin.Forms.Application;
+using Debug = System.Diagnostics.Debug;
+using Plugin.LocalNotifications;
 
 namespace csgo_app.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class addItem : ContentPage
     {
-        private Event event2 = new Event("", "", DateTime.Today, true, "");
+        private Event event2 = new Event("Název tréninku", "", DateTime.Today, true, "");
+        private int event_ID;
         public addItem(Event event3)
         {
             InitializeComponent();
@@ -34,7 +38,20 @@ namespace csgo_app.Views
             item.Ucast = event2.ucast;
             item.Description = event2.description;
             App.Database.SaveItemAsync(item);
+            ShowNotifi(event2.cas);
             
+        }
+
+        Command ShowNotifi(DateTime date)
+        {
+            return new Command((() =>
+            {
+                List<Item> itemsFromDb = App.Database.GetItemsBy().Result;
+                int uID = itemsFromDb[0].ID;
+                    Debug.WriteLine(date);
+                    CrossLocalNotifications.Current.Show(event2.name, event2.description, 101, event2.cas);
+ 
+            }));
         }
 
         private void RedirectHome_Clicked(object sender, EventArgs e)

@@ -18,10 +18,9 @@
         </DatePicker>
         <TimePicker x:Name="timePicker2" VerticalOptions="CenterAndExpand" PropertyChanged="TimePicker_PropertyChanged">
             <TimePicker.Format>
-                
+
             </TimePicker.Format>
         </TimePicker>
-
         <Label FontSize="15" Text="Will i join the event?" />
         <Switch x:Name="join" Toggled="join_Toggled" />
 
