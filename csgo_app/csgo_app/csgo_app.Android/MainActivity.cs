@@ -1,14 +1,15 @@
 ﻿using System;
-
+using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using Android.Support.V4.App;
-using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
-using Android.Content;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+
 
 namespace csgo_app.Droid
 {
@@ -25,55 +26,80 @@ namespace csgo_app.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
 
+
+            if (Intent.HasExtra(NotificationHelper.IntentDataKey))
+            {
+                ProcessNotificationData();
+            }
+
             /*Button button = new Button();
             button.Click += ButtonOnClick;*/
         }
 
+        public void ProcessNotificationData()
+        {
+            //  Console.WriteLine(Intent.Extras.GetBundle(NotificationHelper.IntentDataKey).GetString("data1"));
+
+            // Get data from notification as Bundle object
+            Bundle bundleFromNotification = Intent.Extras.GetBundle(NotificationHelper.IntentDataKey);
+
+            Dictionary<string, string> data = new Dictionary<string, string>();
+
+            // Copy data from bundle to Dictionary
+            foreach (var key in bundleFromNotification.KeySet())
+            {
+                data.Add(key, bundleFromNotification.GetString(key));
+            }
+
+            // Replace actual Page with ReceiverPage and pass data
+            Xamarin.Forms.Application.Current.MainPage = new ReceiverPage(data);
+        }
+
         //NOTIFIKACE!!!
 
-    
 
-      /*  private static readonly int ButtonClickNotificationId = 1000;
 
-        private void ButtonOnClick(object sender, EventArgs eventArgs)
-        {
-            // Pass the current button press count value to the next activity:
-            Bundle valuesForActivity = new Bundle();
-            valuesForActivity.PutInt("count", count);
+        /*  private static readonly int ButtonClickNotificationId = 1000;
 
-            // When the user clicks the notification, SecondActivity will start up.
-            Intent resultIntent = new Intent(this, typeof(SecondActivity));
+          private void ButtonOnClick(object sender, EventArgs eventArgs)
+          {
+              // Pass the current button press count value to the next activity:
+              Bundle valuesForActivity = new Bundle();
+              valuesForActivity.PutInt("count", count);
 
-            // Pass some values to SecondActivity:
-            resultIntent.PutExtras(valuesForActivity);
+              // When the user clicks the notification, SecondActivity will start up.
+              Intent resultIntent = new Intent(this, typeof(SecondActivity));
 
-            // Construct a back stack for cross-task navigation:
-            TaskStackBuilder stackBuilder = TaskStackBuilder.Create(this);
-            stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(SecondActivity)));
-            stackBuilder.AddNextIntent(resultIntent);
+              // Pass some values to SecondActivity:
+              resultIntent.PutExtras(valuesForActivity);
 
-            // Create the PendingIntent with the back stack:            
-            PendingIntent resultPendingIntent =
-                stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+              // Construct a back stack for cross-task navigation:
+              TaskStackBuilder stackBuilder = TaskStackBuilder.Create(this);
+              stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(SecondActivity)));
+              stackBuilder.AddNextIntent(resultIntent);
 
-            // Build the notification:
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
-                .SetContentIntent(resultPendingIntent)  // Start 2nd activity when the intent is clicked.
-                .SetContentTitle("Button Clicked")      // Set its title
-                .SetNumber(count)                       // Display the count in the Content Info
-                .SetSmallIcon(Resource.Drawable.ic_stat_button_click)  // Display this icon
-                .SetContentText(String.Format(
-                    "The button has been clicked {0} times.", count)); // The message to display.
+              // Create the PendingIntent with the back stack:            
+              PendingIntent resultPendingIntent =
+                  stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
-            // Finally, publish the notification:
-            NotificationManager notificationManager =
-                (NotificationManager)GetSystemService(Context.NotificationService);
-            notificationManager.Notify(ButtonClickNotificationId, builder.Build());
+              // Build the notification:
+              NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                  .SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
+                  .SetContentIntent(resultPendingIntent)  // Start 2nd activity when the intent is clicked.
+                  .SetContentTitle("Button Clicked")      // Set its title
+                  .SetNumber(count)                       // Display the count in the Content Info
+                  .SetSmallIcon(Resource.Drawable.ic_stat_button_click)  // Display this icon
+                  .SetContentText(String.Format(
+                      "The button has been clicked {0} times.", count)); // The message to display.
 
-            // Increment the button press count:
-            count++;
-        }*/
+              // Finally, publish the notification:
+              NotificationManager notificationManager =
+                  (NotificationManager)GetSystemService(Context.NotificationService);
+              notificationManager.Notify(ButtonClickNotificationId, builder.Build());
+
+              // Increment the button press count:
+              count++;
+          }*/
     }
 }
 
