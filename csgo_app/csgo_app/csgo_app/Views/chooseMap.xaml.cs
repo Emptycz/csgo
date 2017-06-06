@@ -14,14 +14,14 @@ namespace csgo_app.Views
     public partial class chooseMap : ContentPage
     {
         private string map;
-        private Event event3 = new Event("", "", /*DateTime.Today,*/ true, "");
+        private Event event3 = new Event("", "", DateTime.Today, true, "");
         public chooseMap(Event event2)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             event3.name = event2.name;
             event3.description = event2.description;
-            //event3.cas = event2.cas;
+            event3.cas = event2.cas;
             event3.ucast = event2.ucast;
         }
 

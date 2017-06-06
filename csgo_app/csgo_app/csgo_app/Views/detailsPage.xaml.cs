@@ -41,6 +41,8 @@ namespace csgo_app.Views
             mapL.Text = item.Map;
             ucastL.Text = ucast;
             descriptionL.Text = item.Description;
+            casL.Text = item.Cas.ToString();//item.Cas.Day.ToString() + "." + item.Cas.Month.ToString() + "." + item.Cas.Year.ToString();
+            
 
             ToDelete = item;
         }

@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using csgo_app.Views;
 
+
 namespace csgo_app
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -34,13 +35,6 @@ namespace csgo_app
             Navigation.PushAsync(new csgo_app.Views.detailsPage(e.Item as Item));
         }
         
-        //předdefinování proměnných
-        private string name;
-        private string map;
-        private bool ucast;
-        private int cas;
-        private string ucast_confirm;
-
         public MainPage()
         {
             InitializeComponent();

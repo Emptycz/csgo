@@ -15,23 +15,22 @@ namespace csgo_app
     public partial class createEvent : ContentPage
     {
         
-        private Event event2 = new Event("", "",/* DateTime.Today,*/ true, "");
-        private string DescriptionText;
-        private string NameText;
-        private DateTime myDate;
+        private Event event2 = new Event("", "", DateTime.Today, true, "");
 
         public createEvent()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            DatePicker datePicker = new DatePicker
+
+/*            DatePicker datePicker = new DatePicker
             {
                 Format = "D",
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                Changed
             };
+            MyLayout.Children.Add(datePicker);*/
     }
 
-        private event EventHandler<DateChangedEventArgs> DateSelected;
 
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -44,14 +43,33 @@ namespace csgo_app
         //    DescriptionText = Description.Text;
             event2.description = Description.Text;
         }
-       
+      
+
+        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            if(sender is DatePicker)
+            {
+                DatePicker datePicker = (DatePicker)sender;
+                event2.cas = datePicker.Date;
+            }
+
+        }
+
+        private void TimePicker_PropertyChanged(object sender, EventArgs e)
+        {
+            if (sender is TimePicker)
+            {
+                TimePicker timePicker = (TimePicker)sender;
+                TimeSpan time = timePicker.Time;
+                event2.cas = event2.cas + time;
+            }
+        }
 
         private void Continue_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new csgo_app.Views.chooseMap(event2), false);
         }
 
-        
- 
+      
     }
 }

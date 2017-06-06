@@ -10,11 +10,18 @@
       AbsoluteLayout.LayoutBounds="0,140,1,40"
       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
         </Label>
+        <Label      
+      x:Name ="casL"
+      FontSize="20"
+      HorizontalTextAlignment="Center"
+      AbsoluteLayout.LayoutBounds="0,165,1,40"
+      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+        </Label>
         <Label 
       x:Name="mapL"
       FontSize="15"
       HorizontalTextAlignment="Center"
-      AbsoluteLayout.LayoutBounds="0,180,1,40"
+      AbsoluteLayout.LayoutBounds="0,200,1,40"
       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
         </Label>
         <Label      
