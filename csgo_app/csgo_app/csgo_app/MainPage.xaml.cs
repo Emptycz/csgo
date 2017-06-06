@@ -9,7 +9,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using csgo_app.Views;
 
-
 namespace csgo_app
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

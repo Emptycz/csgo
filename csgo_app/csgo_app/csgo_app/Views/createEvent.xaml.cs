@@ -65,11 +65,14 @@ namespace csgo_app
             }
         }
 
+        private void join_Toggled(object sender, ToggledEventArgs e)
+        {
+            event2.ucast = join.IsToggled;
+        }
+
         private void Continue_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new csgo_app.Views.chooseMap(event2), false);
         }
-
-      
     }
 }

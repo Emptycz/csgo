@@ -27,7 +27,8 @@ namespace csgo_app.Views
         public detailsPage(Item item)
         {
             InitializeComponent();
-            
+            NavigationPage.SetHasNavigationBar(this, false);
+
             if (item.Ucast == true)
             {
                 ucast = "Zůčastním se";
@@ -41,7 +42,7 @@ namespace csgo_app.Views
             mapL.Text = item.Map;
             ucastL.Text = ucast;
             descriptionL.Text = item.Description;
-            casL.Text = item.Cas.ToString();//item.Cas.Day.ToString() + "." + item.Cas.Month.ToString() + "." + item.Cas.Year.ToString();
+            casL.Text = /*item.Cas.ToString();*/item.Cas.Day.ToString() + "." + item.Cas.Month.ToString() + "." + item.Cas.Year.ToString() + " " + item.Cas.Hour.ToString() + ":" + item.Cas.Minute.ToString();
             
 
             ToDelete = item;
