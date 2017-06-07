@@ -38,21 +38,26 @@ namespace csgo_app.Views
             item.Ucast = event2.ucast;
             item.Description = event2.description;
             App.Database.SaveItemAsync(item);
-            ShowNotifi(event2.cas);
-            
+            if(event2.ucast == true)
+            {
+                ShowNotifi(event2.cas);
+            }
+
         }
 
-        Command ShowNotifi(DateTime date)
+        private void ShowNotifi(DateTime date)
         {
-            return new Command((() =>
+
+            List<Item> itemsFromDb = App.Database.GetLastID().Result;
+            foreach (Item i in itemsFromDb)
             {
-                List<Item> itemsFromDb = App.Database.GetItemsBy().Result;
-                int uID = itemsFromDb[0].ID;
-                    Debug.WriteLine(date);
-                    CrossLocalNotifications.Current.Show(event2.name, event2.description, 101, event2.cas);
- 
-            }));
+                int uID = i.ID;
+                Debug.WriteLine(date);
+                CrossLocalNotifications.Current.Show(event2.name, event2.description, uID, event2.cas);
+            }
         }
+    
+        
 
         private void RedirectHome_Clicked(object sender, EventArgs e)
         {

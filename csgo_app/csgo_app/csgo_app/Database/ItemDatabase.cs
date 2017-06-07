@@ -42,6 +42,11 @@ namespace csgo_app.Database
             return database.QueryAsync<Item>("SELECT * FROM [Item] ORDER BY `ID` DESC LIMIT 10");
         }
 
+        public Task<List<Item>> GetLastID()
+        {
+            return database.QueryAsync<Item>("SELECT seq FROM sqlite_sequence");
+        }
+
         public Task<int> SaveItemAsync(Item item)
         {
             item.TimeStamp = DateTime.Now;

@@ -24,7 +24,7 @@ namespace csgo_app.Views
             
         }
 
-        Item ToDelete = new Item();
+        private Item ToDelete = new Item();
 
         public detailsPage(Item item)
         {
@@ -33,11 +33,11 @@ namespace csgo_app.Views
 
             if (item.Ucast == true)
             {
-                ucast = "Zůčastním se";
+                ucast = "Notification is active!";
             }
             else
             {
-                ucast = "Nezůčastním se";
+                ucast = "Notification is not active!";
             }
             
             nameL.Text = item.Name;
@@ -57,18 +57,14 @@ namespace csgo_app.Views
         async void OnAlertYesNoClicked(object sender, EventArgs e)
         {
             var answer = await DisplayAlert("", "Do you really want to delete this event?", "Yes", "No");
-            string answered = answer.ToString();
-            if ( answered == "Yes" )
+            if ( answer )
             {
-                DeleteMe();
+                DeleteMe(ToDelete);
             }
-            else
-            {
-                Navigation.PushAsync(new csgo_app.MainPage(), false);
-            }
+
         }
 
-        private void DeleteMe()
+        private void DeleteMe(Item ToDelete)
         {
             App.Database.DeleteItemAsync(ToDelete);
             Navigation.PushAsync(new csgo_app.MainPage(), false);

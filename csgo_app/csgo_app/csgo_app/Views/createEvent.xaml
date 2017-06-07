@@ -21,7 +21,7 @@
 
             </TimePicker.Format>
         </TimePicker>
-        <Label FontSize="15" Text="Will i join the event?" />
+        <Label FontSize="15" Text="Do you want me to notificate you?" />
         <Switch x:Name="join" Toggled="join_Toggled" />
 
         <Button x:Name="Continue" Text="Continue"  HorizontalOptions="StartAndExpand" Margin="135, 75, 0, 0" FontSize="15" Clicked="Continue_Clicked"/>
