@@ -13,7 +13,6 @@ namespace csgo_app.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class chooseMap : ContentPage
     {
-        private string map;
         private Event event3 = new Event("", "", DateTime.Today, true, "");
         public chooseMap(Event event2)
         {

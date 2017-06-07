@@ -28,6 +28,21 @@ namespace csgo_app.Views
             event2.cas = event3.cas;
             event2.ucast = event3.ucast;
 
+            if(event2.name == "")
+            {
+                event2.name = "Nebyl zadán název";
+            }
+
+            if(event2.description == "")
+            {
+                event2.description = "Nebyl zadán žádný popisek";
+            }
+
+            if(event2.map == "")
+            {
+                event2.map = "Not selected";
+            }
+
             var dbConnection = App.Database;
 
             ItemDatabase ItemDatabase = App.Database;

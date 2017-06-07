@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="csgo_app.createEvent">
+             x:Class="csgo_app.Views.editItem">
     <StackLayout x:Name="MyLayout">
 
 
-       <!-- <Label  Margin="50, 50, 0, 0" FontSize="15" Text="Please fill all the fields below" /> -->
+        <!-- <Label  Margin="50, 50, 0, 0" FontSize="15" Text="Please fill all the fields below" /> -->
         <Entry x:Name="Name" Placeholder="Name of the training"  HorizontalOptions="StartAndExpand" Margin="40, 20, 0, 0" FontSize="15" TextChanged="Name_TextChanged" />
-       <!-- <Entry x:Name="Start" Placeholder="Start time of the training"  HorizontalOptions="StartAndExpand" Margin="40, 0, 0, 0" FontSize="15" TextChanged="Start_TextChanged" />
+        <!-- <Entry x:Name="Start" Placeholder="Start time of the training"  HorizontalOptions="StartAndExpand" Margin="40, 0, 0, 0" FontSize="15" TextChanged="Start_TextChanged" />
         <Entry x:Name="Day" Placeholder="Date of the training"  HorizontalOptions="StartAndExpand" Margin="40, 0, 0, 0" FontSize="15" TextChanged="Day_TextChanged" /> -->
-       <!-- <Label  Margin="50, 30, 0, 0" FontSize="15" Text="Description of the training" /> -->
+        <!-- <Label  Margin="50, 30, 0, 0" FontSize="15" Text="Description of the training" /> -->
         <Entry x:Name="Description" Placeholder="Description of the training"  HorizontalOptions="StartAndExpand" Margin="40, 40, 0, 0" FontSize="15" TextChanged="Description_TextChanged" />
         <DatePicker x:Name="datePicker2" VerticalOptions="CenterAndExpand" DateSelected="DatePicker_DateSelected">
             <DatePicker.Format>
@@ -18,7 +18,7 @@
         </DatePicker>
         <TimePicker x:Name="timePicker2" VerticalOptions="CenterAndExpand" PropertyChanged="TimePicker_PropertyChanged">
             <TimePicker.Format>
-                
+
             </TimePicker.Format>
         </TimePicker>
         <Label FontSize="15" Text="Do you want me to notificate you?" />
