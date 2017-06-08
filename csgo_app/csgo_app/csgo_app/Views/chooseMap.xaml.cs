@@ -14,19 +14,30 @@ namespace csgo_app.Views
     public partial class chooseMap : ContentPage
     {
         private Event event3 = new Event("", "", DateTime.Today, true, "");
+        private Event event_edit = new Event(1,"", "", DateTime.Today, true, "", false);
         public chooseMap(Event event2)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            event3.name = event2.name;
-            event3.description = event2.description;
-            event3.cas = event2.cas;
-            event3.ucast = event2.ucast;
+            if (event2.edit == false)
+            {
+                event3.name = event2.name;
+                event3.description = event2.description;
+                event3.cas = event2.cas;
+                event3.ucast = event2.ucast;
+            }else
+            {
+                event_edit.name = event2.name;
+                event_edit.description = event2.description;
+                event_edit.cas = event2.cas;
+                event_edit.ucast = event2.ucast;
+                event_edit.edit = true;
+            }
         }
-
+        
         private void Train_Clicked(object sender, EventArgs e)
         {
-            event3.map = Train.Text;
+            event3.map = Train.Text;      
             Navigation.PushAsync(new addItem(event3));
         }
 

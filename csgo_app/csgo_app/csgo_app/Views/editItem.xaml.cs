@@ -16,7 +16,7 @@ namespace csgo_app.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class editItem : ContentPage
     {
-        private Event event2 = new Event("", "", DateTime.Today, true, "");
+        private Event event2 = new Event(1,"", "", DateTime.Today, true, "", true);
         public editItem(Item item)
         {
             InitializeComponent();

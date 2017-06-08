@@ -20,7 +20,6 @@ namespace csgo_app.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-
             
         }
 

@@ -52,5 +52,26 @@ namespace csgo_app
             };  
         }
 
+        private void EditItem_Clicked(object sender, SelectedItemChangedEventArgs e)
+        {
+            var pom = ((e.SelectedItem) as Item);
+            mainList.ItemsSource = App.Database.GetItemsAsync().Result;
+            //mainList.ItemTapped += (s, e) =>
+            //{
+                Navigation.PushAsync(new csgo_app.Views.editItem(pom), true);
+            //};
+        }
+
+        private void DeleteItem_Clicked(object sender, SelectedItemChangedEventArgs e)
+        {
+            var pom = ((e.SelectedItem) as Item);
+           /* mainList.ItemsSource = App.Database.GetItemsAsync().Result;
+             mainList.ItemsSource = App.Database.GetItemsAsync().Result;
+             mainList.ItemTapped += (s, e) =>
+             {*/
+            //Navigation.PushAsync(new csgo_app.Views.detailsPage(pom), true);
+          //  };
+        }
+
     }
 }

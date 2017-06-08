@@ -17,47 +17,68 @@ namespace csgo_app.Views
     public partial class addItem : ContentPage
     {
         private Event event2 = new Event("Název tréninku", "", DateTime.Today, true, "");
+        private Event event_edit = new Event(1,"Název tréninku", "", DateTime.Today, true, "", false);
+
         private int event_ID;
         public addItem(Event event3)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            event2.name = event3.name;
-            event2.description = event3.description;
-            event2.map = event3.map;
-            event2.cas = event3.cas;
-            event2.ucast = event3.ucast;
-
-            if(event2.name == "")
+            if (event3.edit == false)
             {
-                event2.name = "Nebyl zadán název";
-            }
+                event2.name = event3.name;
+                event2.description = event3.description;
+                event2.map = event3.map;
+                event2.cas = event3.cas;
+                event2.ucast = event3.ucast;
 
-            if(event2.description == "")
+                if (event2.name == "")
+                {
+                    event2.name = "Nebyl zadán název";
+                }
+
+                if (event2.description == "")
+                {
+                    event2.description = "Nebyl zadán žádný popisek";
+                }
+
+                if (event2.map == "")
+                {
+                    event2.map = "Not selected";
+                }
+
+                var dbConnection = App.Database;
+
+                ItemDatabase ItemDatabase = App.Database;
+                Item item = new Item();
+                item.Cas = event2.cas;
+                item.Map = event2.map;
+                item.Name = event2.name;
+                item.Ucast = event2.ucast;
+                item.Description = event2.description;
+                App.Database.SaveItemAsync(item);
+                if (event2.ucast == true)
+                {
+                    ShowNotifi(event2.cas);
+                }
+            }else
             {
-                event2.description = "Nebyl zadán žádný popisek";
+                event2.name = event3.name;
+                event2.description = event3.description;
+                event2.map = event3.map;
+                event2.cas = event3.cas;
+                event2.ucast = event3.ucast;
+
+                ItemDatabase ItemDatabase = App.Database;
+                Item item = new Item();
+                App.Database.SaveItemAsync(item);
+                item.ID = event2.ID;
+                item.Cas = event2.cas;
+                item.Map = event2.map;
+                item.Name = event2.name;
+                item.Ucast = event2.ucast;
+                item.Description = event2.description;
             }
-
-            if(event2.map == "")
-            {
-                event2.map = "Not selected";
-            }
-
-            var dbConnection = App.Database;
-
-            ItemDatabase ItemDatabase = App.Database;
-            Item item = new Item();
-            item.Cas = event2.cas;
-            item.Map = event2.map;
-            item.Name = event2.name;
-            item.Ucast = event2.ucast;
-            item.Description = event2.description;
-            App.Database.SaveItemAsync(item);
-            if(event2.ucast == true)
-            {
-                ShowNotifi(event2.cas);
-            }
-
         }
 
         private void ShowNotifi(DateTime date)
